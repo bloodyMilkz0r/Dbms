@@ -157,7 +157,7 @@
         <TextBlock Text="№ истории болезни" Grid.Column="6" Grid.ColumnSpan="3" />
         <TextBox Text="{Binding MedicalHistory}" Grid.Column="9" Grid.ColumnSpan="3"/>
         <TextBlock Text="ФИО медсестры-анестезистки" Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="6"/>
-        <TextBox Text="{Binding NameDoctor}" Grid.Row="1" Grid.Column="9" Grid.ColumnSpan="3"/>
+        <TextBox Text="{Binding NameNurse}" Grid.Row="1" Grid.Column="9" Grid.ColumnSpan="3"/>
         <TextBlock Text="Отделение"  Grid.Row="2" Grid.ColumnSpan="3" />
         <TextBox Text="{Binding Department}" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3"/>
         <TextBlock Text="Вид вмешательсва"  Grid.Row="2" Grid.Column="6" Grid.ColumnSpan="3" />
