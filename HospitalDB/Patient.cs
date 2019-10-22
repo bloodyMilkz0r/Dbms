@@ -9,7 +9,7 @@ namespace HospitalDB
 
         private string name;
 
-        private int medicalHistory;
+        private string medicalHistory;
 
         private string data;
 
@@ -29,7 +29,7 @@ namespace HospitalDB
 
         private string priceOfService;
 
-        private double price;
+        private string price;
 
         private string code;
 
@@ -107,7 +107,7 @@ namespace HospitalDB
 
         private string endotrachealTube;
 
-        private double points;
+        private string points;
 
         #endregion
         #region Свойства
@@ -123,7 +123,7 @@ namespace HospitalDB
                 PropertyChangedOn("Name");
             }
         }
-        public int MedicalHistory
+        public string MedicalHistory
         {
             get { return medicalHistory;  }
 
@@ -235,7 +235,7 @@ namespace HospitalDB
                 PropertyChangedOn("PriceOfService");
             }
         }
-        public double Price
+        public string Price
         {
             get { return price; }
 
@@ -663,7 +663,7 @@ namespace HospitalDB
                 PropertyChangedOn("EndotrachealTube");
             }
         }
-        public double Points
+        public string Points
         {
             get { return points; }
 
