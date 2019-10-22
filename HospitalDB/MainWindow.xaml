@@ -109,23 +109,23 @@
                     <StackPanel>
                         <Expander>
                             <Expander.Header>
-                                <Grid>
+                                <Grid Width="Auto" MinWidth="1600">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition MinWidth="82" Width="0.7*"/>
-                                        <ColumnDefinition MinWidth="109" Width="1*"/>
-                                        <ColumnDefinition MinWidth="109" Width="1*"/>
-                                        <ColumnDefinition MinWidth="109" Width="1*"/>
-                                        <ColumnDefinition MinWidth="109" Width="1*"/>
-                                        <ColumnDefinition MinWidth="109" Width="1*"/>
-                                        <ColumnDefinition MinWidth="109" Width="1*"/>
-                                        <ColumnDefinition MinWidth="109" Width="1*" />
-                                        <ColumnDefinition MinWidth="109" Width="1*"/>
-                                        <ColumnDefinition MinWidth="109" Width="1*"/>
-                                        <ColumnDefinition MinWidth="109" Width="1*"/>
-                                        <ColumnDefinition MinWidth="108" Width="1*"/>
-                                        <ColumnDefinition MinWidth="100" Width="1*"/>
-                                        <ColumnDefinition MinWidth="109" Width="1*"/>
-                                        <ColumnDefinition MinWidth="109" Width="1*"/>
+                                        <ColumnDefinition Width="0.8*"/>
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Padding="1" Margin="3" Text="{Binding Data}" TextAlignment="Left"/>
                                     <TextBlock Padding="1" Margin="3" Text="{Binding StartTime}" Grid.Column="1" TextAlignment="Left"/>
@@ -145,6 +145,120 @@
 
                                 </Grid>
                             </Expander.Header>
+                            <StackPanel Margin="10,4,0,0">
+                                <Grid ShowGridLines="True">
+                                    <Grid.Resources>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="FontFamily" Value="Century Gothic" />
+                                            <Setter Property="TextAlignment" Value="Center" />
+                                            <Setter Property="TextWrapping" Value="Wrap"/>
+                                            <Setter Property="Margin" Value="4"/>
+                                        </Style>
+                                    </Grid.Resources>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="0.5*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="0.5*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="0.5*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="0.5*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="0.5*"/>
+
+
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Миорелаксанты" Margin="7" />
+                                    <TextBlock Text="{Binding Premedication}" Grid.Row="1"/>
+                                    <TextBlock Text="Кол-во" Grid.Column="1"/>
+                                    <TextBlock Text="{Binding PremedicationQuantity}" Grid.Column="1" Grid.Row="1"/>
+                                    <TextBlock Text="Опиоидные анестетики" Grid.Column="2"/>
+                                    <TextBlock Text="{Binding Opioids}" Grid.Column="2" Grid.Row="1"/>
+                                    <TextBlock Text="Кол-во (амп)" Grid.Column="3"/>
+                                    <TextBlock Text="{Binding OpioidsQuantity}" Grid.Column="3" Grid.Row="1"/>
+                                    <TextBlock Text="Бензодиазепины" Grid.Column="4"/>
+                                    <TextBlock Text="{Binding Benzodiazepine}" Grid.Column="4" Grid.Row="1"/>
+                                    <TextBlock Text="Кол-во (амп)" Grid.Column="5"/>
+                                    <TextBlock Text="{Binding BenzodiazepineQuantity}" Grid.Column="5" Grid.Row="1"/>
+                                    <TextBlock Text="Гипнотики" Grid.Column="6"/>
+                                    <TextBlock Text="{Binding Hypnotic}" Grid.Column="6" Grid.Row="1"/>
+                                    <TextBlock Text="Кол-во (амп)" Grid.Column="7"/>
+                                    <TextBlock Text="{Binding HypnoticQuantity}" Grid.Column="7" Grid.Row="1"/>
+                                    <TextBlock Text="Миорелаксанты" Grid.Column="8"/>
+                                    <TextBlock Text="{Binding MuscleRelaxant}" Grid.Column="8" Grid.Row="1"/>
+                                    <TextBlock Text="Кол-во (амп)" Grid.Column="9"/>
+                                    <TextBlock Text="{Binding MuscleRelaxantQuantity}" Grid.Column="9" Grid.Row="1"/>
+
+                                    <TextBlock Text="Фторсодержащие ингаляционные анестетики" Grid.Row="2"/>
+                                    <TextBlock Text="{Binding FluorideContaining}" Margin="4"  Grid.Row="3"/>
+                                    <TextBlock Text="Кол-во (мл)" Grid.Row="2" Grid.Column="1"/>
+                                    <TextBlock Text="{Binding FluorideContainingQuantity}" Grid.Row="3"  Grid.Column="1"/>
+                                    <TextBlock Text="Опиоидный анальгетик №2" Grid.Row="2" Grid.Column="2"/>
+                                    <TextBlock Text="{Binding Opioids2}" Grid.Column="2" Grid.Row="3"/>
+                                    <TextBlock Text="Кол-во (амп)" Grid.Column="3" Grid.Row="2"/>
+                                    <TextBlock Text="{Binding Opioids2Quantity}" Grid.Column="3" Grid.Row="3"/>
+                                    <TextBlock Text="Местные анестетики" Grid.Row="2"  Grid.Column="4"/>
+                                    <TextBlock Text="{Binding Local}" Grid.Row="3" Grid.Column="4"/>
+                                    <TextBlock Text="Кол-во (амп)" Grid.Row="2" Grid.Column="5"  />
+                                    <TextBlock Text="{Binding LocalQuantity}" Grid.Row="3" Grid.Column="5" />
+                                    <TextBlock Text="Местные анестетики  №2" Grid.Row="2"  Grid.Column="6"/>
+                                    <TextBlock Text="{Binding Local2}" Grid.Row="3" Grid.Column="6"/>
+                                    <TextBlock Text="Кол-во (амп)" Grid.Row="2" Grid.Column="7" />
+                                    <TextBlock Text="{Binding Local2Quantity}" Grid.Row="3" Grid.Column="7" />
+                                    <TextBlock Text="Нейро-вегетативная блокада" Grid.Row="2"  Grid.Column="8"/>
+                                    <TextBlock Text="{Binding Neurovegetative}" Grid.Row="3" Grid.Column="8"/>
+                                    <TextBlock Text="Кол-во (амп)" Grid.Row="2"  Grid.Column="9" />
+                                    <TextBlock Text="{Binding NeurovegetativeQuantity}" Grid.Row="3" Grid.Column="9"/>
+
+                                    <TextBlock Text="Гемостатики" Grid.Row="4"/>
+                                    <TextBlock Text="{Binding Hemostatics}" Grid.Row="5" />
+                                    <TextBlock Text="Кол-во (амп)" Grid.Row="4" Grid.Column="1"  />
+                                    <TextBlock Text="{Binding HemostaticsQuantity}" Grid.Row="5" Grid.Column="1" />
+                                    <TextBlock Text="Сокращающие матку/спазмолитики" Grid.Row="4"  Grid.Column="2"/>
+                                    <TextBlock Text="{Binding Antispasmodics}" Grid.Row="5" Grid.Column="2"/>
+                                    <TextBlock Text="Кол-во (амп)" Grid.Row="4" Grid.Column="3"  />
+                                    <TextBlock Text="{Binding AntispasmodicsQuantity}" Grid.Row="5" Grid.Column="3"/>
+                                    <TextBlock Text="Растворы" Grid.Row="4" Grid.Column="4"/>
+                                    <TextBlock Text="{Binding Solutions}" Grid.Row="5" Grid.Column="4"/>
+                                    <TextBlock Text="Кол-во (амп)" Grid.Row="4"  Grid.Column="5"/>
+                                    <TextBlock Text="{Binding SolutionsQuantity}" Grid.Row="5" Grid.Column="5"/>
+                                    <TextBlock Text="Атропин" Grid.Row="4" Grid.Column="6"/>
+                                    <TextBlock Text="{Binding Antropine}" Grid.Row="5" Grid.Column="6"/>
+                                    <TextBlock Text="Кол-во (амп)" Grid.Column="7" Grid.Row="4"/>
+                                    <TextBlock Text="{Binding AntropineQuantity}" Grid.Row="5" Grid.Column="7"/>
+                                    <TextBlock Text="Тип иглы спинальной" Grid.Row="4" Grid.Column="8"/>
+                                    <TextBlock Text="{Binding TypeOfSpialNeedle}" Grid.Row="5" Grid.Column="8"/>
+                                    <TextBlock Text="Кол-во" Grid.Column="9" Grid.Row="4"/>
+                                    <TextBlock Text="{Binding SpialNeedle}" Grid.Column="9" Grid.Row="5"/>
+
+                                    <TextBlock Text="Ингаляционный анестетик" Grid.Row="6" />
+                                    <TextBlock Text="{Binding Inhalation}" Grid.Row="7" />
+                                    <TextBlock Text="Кол-во (мл)" Grid.Row="6" Grid.Column="1"/>
+                                    <TextBlock Text="{Binding InhalationQuantity}" Grid.Row="7" Grid.Column="1"/>
+                                    <TextBlock Text="Время назначенияия анальгетика" Grid.Row="6"  Grid.Column="2"/>
+                                    <TextBlock Text="{Binding TimeInhalation}" Grid.Row="7" Grid.Column="2"/>
+                                    <TextBlock Text="Набор для перидуральной анестезии" Grid.Row="6" Grid.Column="4"/>
+                                    <TextBlock Text="{Binding EpudralKit}" Grid.Row="7" Grid.Column="4"/>
+                                    <TextBlock Text="Интубационная трубка"  Grid.Row="6" Grid.Column="6" />
+                                    <TextBlock Text="{Binding EndotrachealTub}" Grid.Column="6" Grid.Row="7"/>
+                                    <TextBlock Text="Баллы" Grid.Column="8" Grid.Row="6"/>
+                                    <TextBlock Text="{Binding Points}" Grid.Column="8" Grid.Row="7"/>
+
+                                </Grid>
+                            </StackPanel>
                         </Expander>
                     </StackPanel>
                 </DataTemplate>
@@ -152,6 +266,9 @@
             </ListBox.ItemTemplate>
 
         </ListBox>
+
+
+
 
 
     </Grid>
