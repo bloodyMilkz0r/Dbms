@@ -1,0 +1,183 @@
+﻿<Window x:Class="HospitalDB.EditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HospitalDB"
+        mc:Ignorable="d"
+        Title="Редактирование" Height="800" Width="1000">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="FontFamily" Value="Century Gothic" />
+            <Setter Property="FontWeight" Value="UltraBold" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="FontFamily" Value="Century Gothic" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition />
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="ФИО пациента"  Grid.ColumnSpan="3"/>
+        <TextBox Text="{Binding Name}" Grid.Column="3" Grid.ColumnSpan="3"/>
+        <TextBlock Text="ФИО  врача-анестезиолога" Grid.Row="1" Grid.ColumnSpan="3"/>
+        <TextBox Text="{Binding NameDoctor}" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3"/>
+        <TextBlock Text="№ истории болезни" Grid.Column="6" Grid.ColumnSpan="3" />
+        <TextBox Text="{Binding MedicalHistory}" Grid.Column="9" Grid.ColumnSpan="3"/>
+        <TextBlock Text="ФИО медсестры-анестезистки" Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="6"/>
+        <TextBox Text="{Binding NameDoctor}" Grid.Row="1" Grid.Column="9" Grid.ColumnSpan="3"/>
+        <TextBlock Text="Отделение"  Grid.Row="2" Grid.ColumnSpan="3" />
+        <TextBox Text="{Binding Department}" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3"/>
+        <TextBlock Text="Вид вмешательсва"  Grid.Row="2" Grid.Column="6" Grid.ColumnSpan="3" />
+        <TextBox Text="{Binding TypeOfIntervention}" Grid.Row="2" Grid.Column="9" Grid.ColumnSpan="3"/>
+        <TextBlock Text="Срочность мед. помощи"  Grid.Row="3"  Grid.ColumnSpan="3" />
+        <TextBox Text="{Binding MedicalCare}" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="3"/>
+        <TextBlock Text="Вид услуг"  Grid.Row="3" Grid.Column="6" Grid.ColumnSpan="3" />
+        <TextBox Text="{Binding TypeOfService}" Grid.Row="3" Grid.Column="9" Grid.ColumnSpan="3"/>
+        <TextBlock Text="Бюджет или платная услуга" Grid.Row="4" Grid.ColumnSpan="3"/>
+        <TextBox Text="{Binding PriceOfService}" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2"/>
+        <TextBlock Text="Цена по прейскуранту"  Grid.Row="4" Grid.Column="5" Grid.ColumnSpan="2" />
+        <TextBox Text="{Binding Price}" Grid.Row="4" Grid.Column="7" Grid.ColumnSpan="2"/>
+        <TextBlock Text="Код услуги"  Grid.Row="4" Grid.Column="9" />
+        <TextBox Text="{Binding Code}" Grid.Row="4" Grid.Column="10" Grid.ColumnSpan="2"/>
+        <TextBlock Text="Дата" Grid.Row="5"/>
+        <TextBox Text="{Binding Data}" Grid.Row="5" Grid.Column="1"/>
+        <TextBlock Text="Начало анастезии"  Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <TextBox Text="{Binding StartTime}" Grid.Row="5" Grid.Column="4"/>
+        <TextBlock Text="Завершение анастезии"  Grid.Row="5" Grid.Column="5" Grid.ColumnSpan="2" />
+        <TextBox Text="{Binding FinishTime}" Grid.Row="5" Grid.Column="7" />
+        <TextBlock Text="Осложнения"  Grid.Row="5" Grid.Column="8" Grid.ColumnSpan="2" />
+        <TextBox Text="{Binding Sequela}" Grid.Row="5" Grid.Column="10" Grid.ColumnSpan="2"/>
+        <TextBlock Text="Премедикация"  Grid.Row="7"  Grid.ColumnSpan="2" />
+        <TextBox Text="{Binding Premedication}" Grid.Row="8" Grid.ColumnSpan="2"/>
+        <TextBlock Text="Кол-во"  Grid.Row="7"  Grid.Column="2" />
+        <TextBox Text="{Binding PremedicationQuantity}" Grid.Row="8" Grid.Column="2"/>
+        <TextBlock Text="Опиоидные аналгетики"  Grid.Row="7"  Grid.ColumnSpan="2" Grid.Column="4"/>
+        <TextBox Text="{Binding Opiods}" Grid.Row="8" Grid.ColumnSpan="2" Grid.Column="4"/>
+        <TextBlock Text="Кол-во"  Grid.Row="7"  Grid.Column="6"/>
+        <TextBox Text="{Binding OpioidsQuantity}" Grid.Row="8" Grid.Column="6"/>
+        <TextBlock Text="Бензодиазепины"  Grid.Row="7"  Grid.ColumnSpan="2" Grid.Column="8"/>
+        <TextBox Text="{Binding Benzodiazepine}" Grid.Row="8" Grid.ColumnSpan="2" Grid.Column="8"/>
+        <TextBlock Text="Кол-во"  Grid.Row="7"  Grid.Column="10"/>
+        <TextBox Text="{Binding BenzodiazepineQuantity}" Grid.Row="8" Grid.Column="10"/>
+        <TextBlock Text="Гипнотики"  Grid.Row="10"  Grid.ColumnSpan="2" />
+        <TextBox Text="{Binding Hypnotic}" Grid.Row="11" Grid.ColumnSpan="2"/>
+        <TextBlock Text="Кол-во"  Grid.Row="10"  Grid.Column="2" />
+        <TextBox Text="{Binding HipnoticQuantity}" Grid.Row="11" Grid.Column="2"/>
+        <TextBlock Text="Миорелаксанты"  Grid.Row="10"  Grid.ColumnSpan="2" Grid.Column="4"/>
+        <TextBox Text="{Binding MuscleRelaxant}" Grid.Row="11" Grid.ColumnSpan="2" Grid.Column="4"/>
+        <TextBlock Text="Кол-во"  Grid.Row="10"  Grid.Column="6"/>
+        <TextBox Text="{Binding MuscleRelaxantQuantity}" Grid.Row="11" Grid.Column="6"/>
+        <TextBlock Text="Фторсодержащие ингаляционные анестетики"  Grid.Row="10"  Grid.ColumnSpan="4" Grid.Column="7"/>
+        <TextBox Text="{Binding FluorudeContaining}" Grid.Row="11" Grid.ColumnSpan="4" Grid.Column="7"/>
+        <TextBlock Text="Кол-во"  Grid.Row="10"  Grid.Column="11"/>
+        <TextBox Text="{Binding FluorideContainingQuantity}" Grid.Row="11" Grid.Column="11"/>
+        <TextBlock Text="Ингаляционный анестетик"  Grid.Row="13"  Grid.ColumnSpan="3" />
+        <TextBox Text="{Binding Inhalation}" Grid.Row="14" Grid.ColumnSpan="3"/>
+        <TextBlock Text="Кол-во"  Grid.Row="13"  Grid.Column="3" />
+        <TextBox Text="{Binding InhalationQuantity}" Grid.Row="14" Grid.Column="3"/>
+        <TextBlock Text="Время"  Grid.Row="13"  Grid.Column="4" />
+        <TextBox Text="{Binding TimeInhalation}" Grid.Row="14" Grid.Column="4" />
+        <TextBlock Text="Опиоидный анальгетик №2"  Grid.Row="13"  Grid.ColumnSpan="3" Grid.Column="5"/>
+        <TextBox Text="{Binding Opioids2}" Grid.Row="14" Grid.ColumnSpan="3" Grid.Column="5"/>
+        <TextBlock Text="Кол-во"  Grid.Row="13"  Grid.Column="8"/>
+        <TextBox Text="{Binding Opioids2Quantity}" Grid.Row="14" Grid.Column="8"/>
+        <TextBlock Text="Местные анестетики"  Grid.Row="13"  Grid.ColumnSpan="2" Grid.Column="9"/>
+        <TextBox Text="{Binding Local}" Grid.Row="14" Grid.ColumnSpan="2" Grid.Column="9"/>
+        <TextBlock Text="Кол-во"  Grid.Row="13"  Grid.Column="11"/>
+        <TextBox Text="{Binding LocalQuantity}" Grid.Row="14" Grid.Column="11"/>
+        <TextBlock Text="Местные анестетики №2"  Grid.Row="16"  Grid.ColumnSpan="3" />
+        <TextBox Text="{Binding Local2}" Grid.Row="17" Grid.ColumnSpan="3"/>
+        <TextBlock Text="Кол-во"  Grid.Row="16"  Grid.Column="3" />
+        <TextBox Text="{Binding Local2Quantity}" Grid.Row="17" Grid.Column="3"/>
+        <TextBlock Text="Нейро-вегетативная блокада"  Grid.Row="16"  Grid.ColumnSpan="3" Grid.Column="5"/>
+        <TextBox Text="{Binding Neurovegetative}" Grid.Row="17" Grid.ColumnSpan="3" Grid.Column="5"/>
+        <TextBlock Text="Кол-во"  Grid.Row="16"  Grid.Column="8"/>
+        <TextBox Text="{Binding NeurocegetativeQuantity}" Grid.Row="17" Grid.Column="8"/>
+        <TextBlock Text="Гемостатики"  Grid.Row="16"  Grid.ColumnSpan="2" Grid.Column="9"/>
+        <TextBox Text="{Binding Hemostatics}" Grid.Row="17" Grid.ColumnSpan="2" Grid.Column="9"/>
+        <TextBlock Text="Кол-во"  Grid.Row="16"  Grid.Column="11"/>
+        <TextBox Text="{Binding HemostaticsQuantity}" Grid.Row="17" Grid.Column="11"/>
+        <TextBlock Text="Сокращающие матку/спазмолитики"  Grid.Row="19"  Grid.ColumnSpan="3" />
+        <TextBox Text="{Binding Antispasmodics}" Grid.Row="20" Grid.ColumnSpan="3"/>
+        <TextBlock Text="Кол-во"  Grid.Row="19"  Grid.Column="3" />
+        <TextBox Text="{Binding AntispasmodicsQuantity}" Grid.Row="20" Grid.Column="3"/>
+        <TextBlock Text="Растворы"  Grid.Row="19"  Grid.ColumnSpan="2" Grid.Column="5"/>
+        <TextBox Text="{Binding Solutions}" Grid.Row="20" Grid.ColumnSpan="2" Grid.Column="5"/>
+        <TextBlock Text="Кол-во"  Grid.Row="19"  Grid.Column="7" Height="12" Margin="5,5,5,0" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding SolutionsQuantity}" Grid.Row="20" Grid.Column="7"/>
+        <TextBlock Text="Атропин"  Grid.Row="19"  Grid.ColumnSpan="2" Grid.Column="9"/>
+        <TextBox Text="{Binding Antropine}" Grid.Row="20" Grid.ColumnSpan="2" Grid.Column="9"/>
+        <TextBlock Text="Кол-во"  Grid.Row="19"  Grid.Column="11" Margin="5"/>
+        <TextBox Text="{Binding AntropineQuantity}" Grid.Row="20" Grid.Column="11"/>
+        <TextBlock Text="Набор для перидуральной анестезии"  Grid.Row="22"  Grid.ColumnSpan="4" />
+        <TextBox Text="{Binding EpudralKit}" Grid.Row="23" Grid.ColumnSpan="4"/>
+        <TextBlock Text="Тип спинальной иглы"  Grid.Row="22"  Grid.ColumnSpan="2" Grid.Column="5"/>
+        <TextBox Text="{Binding TypeOfSpialNeedle}" Grid.Row="23" Grid.ColumnSpan="2" Grid.Column="5"/>
+        <TextBlock Text="Кол-во"  Grid.Row="22" Grid.Column="7"/>
+        <TextBox Text="{Binding SpialNeedle}" Grid.Row="23"  Grid.Column="7"/>
+        <TextBlock Text="Интубационная трубка"  Grid.Row="22"  Grid.Column="9" Grid.ColumnSpan="2"/>
+        <TextBox Text="{Binding EndotrachealTube}" Grid.Row="23" Grid.Column="9" Grid.ColumnSpan="2"/>
+        <TextBlock Text="Баллы"  Grid.Row="25"  />
+        <TextBox Text="{Binding Points}" Grid.Row="25" Grid.Column="1" />
+
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="24" Grid.RowSpan="2" Grid.Column="10" Grid.ColumnSpan="2">
+            <Button IsDefault="True" Click="Accept_Click" MinWidth="60" BorderBrush="Transparent" >
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/checkMark.png" />
+                </Button.Background>
+            </Button>
+            <Button IsCancel="True" MinWidth="60"  BorderBrush="Transparent">
+                <Button.Background>
+                    <ImageBrush ImageSource="Resources/cancel.png" />
+                </Button.Background>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
