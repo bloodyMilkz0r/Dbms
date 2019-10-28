@@ -11,6 +11,9 @@ namespace HospitalDB
         Command addCommand;
         Command editCommand;
         Command deleteCommand;
+        Command printCommand;
+        Command printMedHistCommand;
+        Command printProtocol;
         IEnumerable<Patient> patients;
 
         public IEnumerable<Patient> Patients
@@ -205,6 +208,156 @@ namespace HospitalDB
                     }));
             }
         }
+
+
+        public Command PrintDoc
+        {
+            get
+            {
+                return printCommand ??
+                    (printCommand = new Command((selectedItem) =>
+                    {
+                        if (selectedItem == null) return;
+                        //получаем выделенный объект
+                        Patient patient = selectedItem as Patient;
+
+                        Patient vm = new Patient()
+                        {
+                            #region Конструктор
+
+                            Id = patient.Id,
+                            Name = patient.Name,
+                            MedicalHistory = patient.MedicalHistory,
+                            Data = patient.Data,
+                            StartTime = patient.StartTime,
+                            FinishTime = patient.FinishTime,
+                            Department = patient.Department,
+                            TypeOfIntervention = patient.TypeOfIntervention,
+                            TypeOfService = patient.TypeOfService,
+                            Sequela = patient.Sequela,
+                            MedicalCare = patient.MedicalCare,
+                            PriceOfService = patient.PriceOfService,
+                            Price = patient.Price,
+                            Code = patient.Code,
+                            NameDoctor = patient.NameDoctor,
+                            NameNurse = patient.NameNurse,
+                            Premedication = patient.Premedication,
+                            PremedicationQuantity = patient.PremedicationQuantity,
+                            Opioids = patient.Opioids,
+                            OpioidsQuantity = patient.OpioidsQuantity,
+                            Benzodiazepine = patient.Benzodiazepine,
+                            BenzodiazepineQuantity = patient.BenzodiazepineQuantity,
+                            Hypnotic = patient.Hypnotic,
+                            HypnoticQuantity = patient.Hypnotic,
+                            MuscleRelaxant = patient.MuscleRelaxant,
+                            MuscleRelaxantQuantity = patient.MuscleRelaxantQuantity,
+                            FluorideContaining = patient.FluorideContaining,
+                            FluorideContainingQuantity = patient.FluorideContainingQuantity,
+                            Inhalation = patient.Inhalation,
+                            TimeInhalation = patient.TimeInhalation,
+                            InhalationQuantity = patient.InhalationQuantity,
+                            Opioids2 = patient.Opioids2,
+                            Opioids2Quantity = patient.Opioids2Quantity,
+                            Local = patient.Local,
+                            LocalQuantity = patient.LocalQuantity,
+                            Local2 = patient.Local2,
+                            Local2Quantity = patient.Local2Quantity,
+                            Neurovegetative = patient.Neurovegetative,
+                            NeurovegetativeQuantity = patient.NeurovegetativeQuantity,
+                            Hemostatics = patient.Hemostatics,
+                            HemostaticsQuantity = patient.Hemostatics,
+                            Antispasmodics = patient.Antispasmodics,
+                            AntispasmodicsQuantity = patient.AntispasmodicsQuantity,
+                            Solutions = patient.Solutions,
+                            SolutionsQuantity = patient.SolutionsQuantity,
+                            Antropine = patient.Antropine,
+                            AntropineQuantity = patient.AntropineQuantity,
+                            EpudralKit = patient.EpudralKit,
+                            SpialNeedle = patient.SpialNeedle,
+                            TypeOfSpialNeedle = patient.TypeOfSpialNeedle,
+                            EndotrachealTube = patient.EndotrachealTube,
+                            Points = patient.Points
+
+                            #endregion
+                        };
+                        // передаем выделенный объект в диалог окно
+                        PrintDoc PrintDoc = new PrintDoc(vm);
+                        PrintDoc.ShowDialog();
+
+                    }));
+            }
+        }
+
+
+        public Command PrinMedicalHistory
+        {
+            get
+            {
+                return printMedHistCommand ??
+                    (printMedHistCommand = new Command((selectedItem) =>
+                    {
+                        if (selectedItem == null) return;
+                        //получаем выделенный объект
+                        Patient patient = selectedItem as Patient;
+
+                        Patient vm = new Patient()
+                        {
+                            #region Конструктор
+
+                            Id = patient.Id,
+                            Name = patient.Name,
+                            MedicalHistory = patient.MedicalHistory,
+                            Data = patient.Data,
+                            StartTime = patient.StartTime,
+                            FinishTime = patient.FinishTime,
+                            NameDoctor = patient.NameDoctor,
+                            NameNurse = patient.NameNurse,
+
+                            #endregion
+                        };
+                        // передаем выделенный объект в диалог окно
+                        PrintMedicalHistory PrintMedicalHistory = new PrintMedicalHistory(vm);
+                        PrintMedicalHistory.ShowDialog();
+
+                    }));
+            }
+        }
+
+
+        public Command PrintProtocol
+        {
+            get
+            {
+                return printProtocol ??
+                    (printProtocol = new Command((selectedItem) =>
+                    {
+                        if (selectedItem == null) return;
+                        //получаем выделенный объект
+                        Patient patient = selectedItem as Patient;
+
+                        Patient vm = new Patient()
+                        {
+                            #region Конструктор
+
+                            Id = patient.Id,
+                            Name = patient.Name,
+                            MedicalHistory = patient.MedicalHistory,
+                            Data = patient.Data,
+                            StartTime = patient.StartTime,
+                            FinishTime = patient.FinishTime,
+                            NameDoctor = patient.NameDoctor,
+                            NameNurse = patient.NameNurse,
+
+                            #endregion
+                        };
+                        // передаем выделенный объект в диалог окно
+                        PrintProtocol PrintProtocol = new PrintProtocol(vm);
+                        PrintProtocol.ShowDialog();
+
+                    }));
+            }
+        }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 

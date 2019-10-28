@@ -1,0 +1,1267 @@
+﻿<Window x:Class="HospitalDB.PrintProtocol"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HospitalDB"
+        mc:Ignorable="d"
+        Title="Осмотр и протокол анастезии" Height="900" Width="900">
+
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Calibri" />
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Calibri" />
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+    </Window.Resources>
+
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ListBox  Margin="15"  Grid.ColumnSpan="2" VirtualizingPanel.ScrollUnit="Pixel"  >
+
+           
+            <Grid x:Name="print1" Height="29.7cm" Width="21cm">
+                <Grid.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="FontFamily" Value="Verdana"/>
+                        <Setter Property="TextWrapping" Value="Wrap"/>
+                        <Setter Property="FontSize" Value="10"/>
+                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                        <Setter Property="Margin" Value="5"/>
+                    </Style>
+                </Grid.Resources>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.4*"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition/>
+                    <ColumnDefinition />
+                    <ColumnDefinition/>
+                    <ColumnDefinition />
+                    <ColumnDefinition/>
+                    <ColumnDefinition />
+                    <ColumnDefinition/>
+                    <ColumnDefinition />
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+
+                </Grid.ColumnDefinitions>
+
+
+
+                <Image Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="7" Source="Resources/Emblem.bmp"/>
+                <TextBlock Grid.Column="5" Grid.ColumnSpan="5" FontSize="9" Text="УПРАВЛЕНИЕ ДЕЛАМИ ПРЕЗИДЕНТА РОССИЙСКОЙ ФЕДЕРАЦИИ"/>
+                <TextBlock Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="5" FontSize="9" Text="Федеральное государственное бюджетное учреждение"/>
+                <TextBlock Grid.Row="2" Grid.Column="5" Grid.ColumnSpan="5" FontSize="9"  >"Консультативно-диагностический центр с поликлиникой"</TextBlock>
+                <TextBlock Grid.Row="3" Grid.Column="5" Grid.ColumnSpan="5" FontSize="9" Text="197110, г. Санкт-Петербург, Морской проспект дом 3."/>
+                <TextBlock Grid.Row="4" Grid.Column="5" Grid.ColumnSpan="5" FontSize="9" Text="тел.: (812) 331-55-03, (812) 305-24-93   факс:  (812) 305-24-94"/>
+
+                <TextBlock Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="10" >Отделение: "Анестезиологии и реанимации"</TextBlock>
+                <TextBlock Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="10" Text="ПРЕДОПЕРАЦИОННЫЙ ОСМОТР"/>
+                <TextBlock Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" Text="Дата:"/>
+                <TextBlock Grid.Row="9" Grid.Column="3"  Text="{Binding Data}"/>
+                <TextBlock  Grid.Row="9" Grid.Column="4" Grid.ColumnSpan="2" Text="Время осмотра" />
+                <TextBlock Grid.Row="9" Grid.Column="6"  Text="{Binding StartTime}"/>
+                <TextBlock  Grid.Row="9" Grid.Column="7" Grid.ColumnSpan="2" Text="№ истории болезни" />
+                <TextBlock Grid.Row="9" Grid.Column="9" Grid.ColumnSpan="2" Text="{Binding MedicalHistory}"/>
+                <TextBlock  Grid.Row="10" Grid.Column="1" Text="Ф.И.О." />
+                <TextBlock Grid.Row="10" Grid.Column="3" Grid.ColumnSpan="2" Text="{Binding Name}"/>
+                <TextBlock  Grid.Row="10" Grid.Column="4" Grid.ColumnSpan="2" Text="Дата рождения" />
+                <TextBlock  Grid.Row="10" Grid.Column="7" Grid.ColumnSpan="2" Text="Пол" />
+                <ComboBox Grid.Row="10" Grid.Column="9" Grid.ColumnSpan="2"  Background="White"  IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center">
+                    <TextBlock Text="Мужской" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Женский" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <TextBlock  Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="3" Text="Основной диагноз :" />
+                <Border Grid.Row="11" Grid.Column="3" Grid.ColumnSpan="4" Grid.RowSpan="3" BorderBrush="Black"  BorderThickness="1"/>
+                <TextBox  Grid.Row="11" Grid.Column="3" Grid.ColumnSpan="4" Grid.RowSpan="3" Text="эрозия шейки матки" BorderBrush="White" />
+                <TextBlock  Grid.Row="11" Grid.Column="7" Grid.ColumnSpan="2" Grid.RowSpan="3" Text="Предполагаемая операция"/>
+                <TextBlock  Grid.Row="11" Grid.Column="9" Grid.ColumnSpan="2" Grid.RowSpan="3" Text="{Binding TypeOfIntervention}"/>
+                <Border Grid.Row="11" Grid.Column="9" Grid.ColumnSpan="2" Grid.RowSpan="3" BorderBrush="Black"  BorderThickness="1"/>
+                <TextBlock  Grid.Row="14" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="3" Text="Перенесенные операции:" />
+                <TextBox  Grid.Row="14" Grid.Column="3" Grid.ColumnSpan="4" Grid.RowSpan="3" Text="нет" BorderBrush="White"  />
+                <Border Grid.Row="14" Grid.Column="3" Grid.ColumnSpan="4" Grid.RowSpan="3" BorderBrush="Black"  BorderThickness="1"/>
+                <TextBlock  Grid.Row="14" Grid.Column="7" Grid.ColumnSpan="2" Grid.RowSpan="3" Text="Аллергические реакции"/>
+                <TextBox  Grid.Row="14" Grid.Column="9" Grid.ColumnSpan="2" Grid.RowSpan="3" Text="отрицает"  BorderBrush="White"/>
+                <Border Grid.Row="14" Grid.Column="9" Grid.ColumnSpan="2" Grid.RowSpan="3" BorderBrush="Black"  BorderThickness="1"/>
+                <TextBlock  Grid.Row="17" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="3" Text="Сопутствующая патология:" />
+                <TextBox  Grid.Row="17" Grid.Column="3" Grid.ColumnSpan="4" Grid.RowSpan="3" Text="нет" BorderBrush="White" />
+                <Border Grid.Row="17" Grid.Column="3" Grid.ColumnSpan="4" Grid.RowSpan="3"  BorderBrush="Black"  BorderThickness="1"/>
+                <TextBlock  Grid.Row="17" Grid.Column="7" Grid.ColumnSpan="2" Grid.RowSpan="3" Text="Постоянно принимает препараты "/>
+                <TextBox  Grid.Row="17" Grid.Column="9" Grid.ColumnSpan="2" Grid.RowSpan="3" Text="нет" BorderBrush="White"/>
+                <Border Grid.Row="17" Grid.Column="9" Grid.ColumnSpan="2" Grid.RowSpan="3"  BorderBrush="Black"  BorderThickness="1"/>
+                <TextBlock  Grid.Row="20" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="6" Text=" осмотр на момент операции:" />
+                <Border  Grid.Row="20" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="3" BorderBrush="Black"  BorderThickness="1"/>
+                <TextBlock  Grid.Row="20" Grid.Column="3" Grid.ColumnSpan="2" Text="состояние:" />
+                <ComboBox Grid.Row="20" Grid.Column="5"  Grid.ColumnSpan="2"   Background="White"  IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center">
+                    <TextBlock Text="удовлет-ное" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="ср. тяжести" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="тяжелое" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="кр. тяжелоей" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="агония" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <TextBlock  Grid.Row="21" Grid.Column="3" Grid.ColumnSpan="2" Text="сознание:" />
+                <ComboBox Grid.Row="21" Grid.Column="5"  Grid.ColumnSpan="2"   Background="White"  IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center">
+                    <TextBlock Text="ясное" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="спутанное" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="оглушение" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="сопор" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="кома" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <TextBlock  Grid.Row="22" Grid.Column="3" Grid.ColumnSpan="2" Text="последний прием пищи" />
+                <ComboBox Grid.Row="22" Grid.Column="5"  Grid.ColumnSpan="2"   Background="White"  IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="0">
+                    <TextBlock Text="более 6 часов" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"   />
+                    <TextBlock Text="полный желудок	" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <Border  Grid.Row="20" Grid.Column="9" Grid.ColumnSpan="2" Grid.RowSpan="3" BorderBrush="Black"  BorderThickness="1"/>
+                <TextBlock  Grid.Row="20" Grid.Column="7" Grid.ColumnSpan="2" Grid.RowSpan="3" Text="Факторы ТЭЛА" />
+                <Border  Grid.Row="23" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="3" BorderBrush="Black"  BorderThickness="1"/>
+                <Border  Grid.Row="23" Grid.Column="5" Grid.ColumnSpan="6" Grid.RowSpan="3" BorderBrush="Black"  BorderThickness="1"/>
+                <TextBlock  Grid.Row="23" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="3" Text="Жалобы при осмотре:" />
+                <ComboBox Grid.Row="20" Grid.Column="9"  Grid.ColumnSpan="2"   Background="White"  IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" >
+                    <TextBlock Text="возраст >40" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"   />
+                    <TextBlock Text="неподвижность" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="ожирение" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"   />
+                    <TextBlock Text="декомпенсация ССС" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Мерц. Аритмия" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"   />
+                    <TextBlock Text="варикоз" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="диабет" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"   />
+                    <TextBlock Text="септ. Состояние" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="NEO" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"   />
+                    <TextBlock Text="недавние роды" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="21" Grid.Column="9"  Grid.ColumnSpan="2"   Background="White"  IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" >
+                    <TextBlock Text="возраст >40" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"   />
+                    <TextBlock Text="неподвижность" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="ожирение" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"   />
+                    <TextBlock Text="декомпенсация ССС" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Мерц. Аритмия" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"   />
+                    <TextBlock Text="варикоз" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="диабет" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"   />
+                    <TextBlock Text="септ. Состояние" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="NEO" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"   />
+                    <TextBlock Text="недавние роды" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="22" Grid.Column="9"  Grid.ColumnSpan="2"   Background="White"  IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" >
+                    <TextBlock Text="возраст >40" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"   />
+                    <TextBlock Text="неподвижность" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="ожирение" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"   />
+                    <TextBlock Text="декомпенсация ССС" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Мерц. Аритмия" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"   />
+                    <TextBlock Text="варикоз" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="диабет" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"   />
+                    <TextBlock Text="септ. Состояние" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="NEO" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"   />
+                    <TextBlock Text="недавние роды" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+
+                </ComboBox>
+                <TextBlock  Grid.Row="26" Grid.Column="3"  Text="Рост" />
+                <Border  Grid.Row="26" Grid.Column="3" BorderBrush="Black"  BorderThickness="1"/>
+                <TextBox Grid.Row="26" Grid.Column="4"  BorderBrush="White"/>
+                <TextBlock  Grid.Row="26" Grid.Column="5"  Text="Вес" />
+                <Border  Grid.Row="26" Grid.Column="5" BorderBrush="Black"  BorderThickness="1"/>
+                <TextBox Grid.Row="26" Grid.Column="6"  BorderBrush="White" />
+                <TextBlock  Grid.Row="26" Grid.Column="7" Grid.ColumnSpan="2" Text="Отеки" />
+                <Border Grid.Row="26" Grid.Column="7" Grid.ColumnSpan="2" BorderBrush="Black"  BorderThickness="1"/>
+                <ComboBox Grid.Row="26" Grid.Column="9"  Grid.ColumnSpan="2"   Background="White"  IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center"  SelectedIndex="1" >
+                    <TextBlock Text="да" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"   />
+                    <TextBlock Text="нет" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"/>
+                </ComboBox>
+                <TextBlock  Grid.Row="27" Grid.Column="1"  Grid.ColumnSpan="2" Grid.RowSpan="3" Text="кожа и слизестые" />
+                <Border  Grid.Row="27" Grid.Column="3" Grid.ColumnSpan="8" Grid.RowSpan="3" BorderBrush="Black"  BorderThickness="1"/>
+                <TextBlock  Grid.Row="30" Grid.Column="1"  Grid.ColumnSpan="2" Grid.RowSpan="4" Text="Система кровообращения" />
+                <TextBlock  Grid.Row="30" Grid.Column="3"  Text="PS" HorizontalAlignment="Left"/>
+                <Border Grid.Row="30" Grid.Column="3" BorderBrush="Black"  BorderThickness="1"/>
+                <Border  Grid.Row="31" Grid.Column="3"  BorderBrush="Black"  BorderThickness="1"/>
+                <TextBlock  Grid.Row="31" Grid.Column="3"  Text="ЧСС" HorizontalAlignment="Left"/>
+                <TextBlock  Grid.Row="32" Grid.Column="3"  Text="АД" HorizontalAlignment="Left"/>
+                <Border  Grid.Row="32" Grid.Column="3"  BorderBrush="Black"  BorderThickness="1"/>
+                <TextBlock  Grid.Row="33" Grid.Column="3"  Text="ЦВД" HorizontalAlignment="Left"/>
+                <Border  Grid.Row="33" Grid.Column="3"  BorderBrush="Black"  BorderThickness="1"/>
+                <TextBox  Grid.Row="30" Grid.Column="4"  BorderBrush="White" />
+                <Border  Grid.Row="30" Grid.Column="4"  BorderBrush="Black"  BorderThickness="1"/>
+                <Border  Grid.Row="31" Grid.Column="4"  BorderBrush="Black"  BorderThickness="1"/>
+                <Border  Grid.Row="32" Grid.Column="4"  BorderBrush="Black"  BorderThickness="1"/>
+                <Border  Grid.Row="33" Grid.Column="4"  BorderBrush="Black"  BorderThickness="1"/>
+                <TextBox  Grid.Row="31" Grid.Column="4"  BorderBrush="White" />
+                <TextBox  Grid.Row="32" Grid.Column="4"  BorderBrush="White"/>
+                <TextBox  Grid.Row="33" Grid.Column="4"  BorderBrush="White"/>
+                <TextBlock  Grid.Row="30" Grid.Column="5"  Grid.ColumnSpan="2" Grid.RowSpan="4" Text="система дыхания" />
+                <Border   Grid.Row="30" Grid.Column="5"  Grid.ColumnSpan="2" Grid.RowSpan="4"  BorderBrush="Black"  BorderThickness="1"/>
+                <TextBlock  Grid.Row="30" Grid.Column="7" Grid.ColumnSpan="2"  Text="ЧДД" />
+                <Border   Grid.Row="30" Grid.Column="7" Grid.ColumnSpan="2"  BorderBrush="Black"  BorderThickness="1"/>
+                <Border   Grid.Row="31" Grid.Column="7" Grid.ColumnSpan="2"  BorderBrush="Black"  BorderThickness="1"/>
+                <TextBlock  Grid.Row="31" Grid.Column="7" Grid.ColumnSpan="2"  Text="проба Штанге"/>
+                <TextBlock  Grid.Row="32" Grid.Column="7" Grid.RowSpan="2" Grid.ColumnSpan="2"  Text="Индекс трудности интубации" />
+                <Border   Grid.Row="32" Grid.Column="7" Grid.RowSpan="2" Grid.ColumnSpan="2"  BorderBrush="Black"  BorderThickness="1"/>
+                <TextBox  Grid.Row="30" Grid.Column="9" Grid.ColumnSpan="2" BorderBrush="White" />
+                <Border   Grid.Row="30" Grid.Column="9" Grid.ColumnSpan="2"  BorderBrush="Black"  BorderThickness="1"/>
+                <TextBox  Grid.Row="31" Grid.Column="9"  BorderBrush="White" />
+                <TextBox  Grid.Row="31" Grid.Column="10" Text="секунд" HorizontalAlignment="Left"  BorderBrush="White" />
+                <Border   Grid.Row="31" Grid.Column="9"   BorderBrush="Black"  BorderThickness="1"/>
+                <Border   Grid.Row="31" Grid.Column="10"   BorderBrush="Black"  BorderThickness="1"/>
+                <ComboBox Grid.Row="32" Grid.Column="9" Grid.RowSpan="2" Grid.ColumnSpan="2"   Background="White"  IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalAlignment="Center" SelectedIndex="1" >
+                    <TextBlock Text="0 баллов" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"   />
+                    <TextBlock Text="1-2 баллов" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"/>
+                    <TextBlock Text="3-4 баллов" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"   />
+                    <TextBlock Text="5-8 баллов" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"/>
+                </ComboBox>
+                <TextBlock  Grid.Row="35" Grid.Column="1"  Grid.ColumnSpan="2" Grid.RowSpan="3" Text="тяжесть состояния обусловлена:" />
+                <TextBlock  Grid.Row="35" Grid.Column="3"  Grid.ColumnSpan="4" Grid.RowSpan="3" Text="основной патологией." />
+                <Border   Grid.Row="35" Grid.Column="3"  Grid.ColumnSpan="4" Grid.RowSpan="3"  BorderBrush="Black"  BorderThickness="1"/>
+                <TextBlock  Grid.Row="35" Grid.Column="7"  Grid.ColumnSpan="2" Grid.RowSpan="2" Text="Класс АСА	" />
+                <Border   Grid.Row="35" Grid.Column="7"  Grid.ColumnSpan="2" Grid.RowSpan="2"  BorderBrush="Black"  BorderThickness="1"/>
+                <ComboBox Grid.Row="35" Grid.Column="9" Grid.RowSpan="2"   Background="White"  IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalAlignment="Center" SelectedIndex="0" >
+                    <TextBlock Text="I" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"/>
+                    <TextBlock Text="II" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"   />
+                    <TextBlock Text="III" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"/>
+                    <TextBlock Text="IV" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"/>
+                    <TextBlock Text="V" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"/>
+                </ComboBox>
+                <ComboBox Grid.Row="35" Grid.Column="10" Grid.RowSpan="2"   Background="White"  IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalAlignment="Center" SelectedIndex="0" >
+                    <TextBlock Text="1" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"/>
+                    <TextBlock Text="2" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"   />
+                    <TextBlock Text="3" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"/>
+                    <TextBlock Text="4" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"/>
+
+                </ComboBox>
+                <TextBlock  Grid.Row="37" Grid.Column="7"  Grid.ColumnSpan="2" Margin="0"  Text="предполагаемая кровопотеря" />
+                <ComboBox Grid.Row="35" Grid.Column="9" Grid.RowSpan="2"   Background="White"  IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalAlignment="Center" SelectedIndex="0" >
+                    <TextBlock Text="&lt; 1000 " FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"/>
+                    <TextBlock Text=">1000 ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center" />
+                </ComboBox>
+                <TextBlock  Grid.Row="38" Grid.Column="1"  Grid.ColumnSpan="2" Grid.RowSpan="2" Text="Планируемая анестезия"/>
+                <TextBox  Grid.Row="38"  Grid.Column="3"  Grid.ColumnSpan="2" Grid.RowSpan="2" BorderBrush="White" Text="Нет"/>
+                <Border   Grid.Row="38" Grid.Column="3"  Grid.ColumnSpan="2" Grid.RowSpan="2"  BorderBrush="Black"  BorderThickness="1"/>
+                <TextBlock  Grid.Row="40" Grid.Column="1"  Grid.ColumnSpan="2" Grid.RowSpan="4" Text="премедикация"/>
+                <TextBlock  Grid.Row="40" Grid.Column="3"  Grid.RowSpan="2" Text="на ночь:"/>
+                <TextBlock  Grid.Row="42" Grid.Column="3"   Grid.RowSpan="2" Text="перед операцией:" Margin="0"/>
+                <Border     Grid.Row="40" Grid.Column="3"  Grid.RowSpan="2"  BorderBrush="Black"  BorderThickness="1"/>
+                <Border   Grid.Row="42" Grid.Column="3"   Grid.RowSpan="2"  BorderBrush="Black"  BorderThickness="1"/>
+                <ComboBox Grid.Row="40" Grid.Column="4"  Grid.ColumnSpan="3" Grid.RowSpan="2" Background="White"  IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="Tab. Nozepami - 10 mg" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Tab. Phenozepami - 10 mg" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center" />
+                </ComboBox>
+                <ComboBox Grid.Row="42" Grid.Column="4"  Grid.ColumnSpan="3" Grid.RowSpan="2" Background="White"  IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="Sol.Seduxeni 5mg/ml-2ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Sol.Relanii 5mg/ml-2 ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center" />
+                    <TextBlock Text="Sol.Relii 5mg/ml-2 ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Sol.Dormici 5mg/ml-1ml	" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center" />
+                    <TextBlock Text="Sol.Dormici 5mg/ml-3ml	" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center" />
+                    <TextBlock Text="Sol.Sibasoni 5mg/ml-2ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center" />
+                </ComboBox>
+                <TextBox  Grid.Row="40"  Grid.Column="7"   Grid.RowSpan="2" BorderBrush="White" />
+                <TextBox  Grid.Row="42"  Grid.Column="7"   Grid.RowSpan="2" BorderBrush="White" />
+                <TextBlock Grid.Row="47" Grid.Column="6" Grid.ColumnSpan="2" Text="Анестезиолог:"  />
+                <TextBlock Grid.Row="47" Grid.Column="9" Grid.ColumnSpan="2" Text="{Binding NameDoctor}"  />
+            </Grid>
+            <Grid x:Name="print2" Height="29.7cm" Width="21cm">
+                <Grid.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="FontFamily" Value="Verdana"/>
+                        <Setter Property="TextWrapping" Value="Wrap"/>
+                        <Setter Property="FontSize" Value="10"/>
+                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                        <Setter Property="Margin" Value="5"/>
+                    </Style>
+                </Grid.Resources>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.4*"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition/>
+                    <ColumnDefinition />
+                    <ColumnDefinition/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="0.7*"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition/>
+                    <ColumnDefinition  Width="1.4*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+
+                </Grid.ColumnDefinitions>
+
+
+
+                <Image Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="7" Source="Resources/Emblem.bmp"/>
+                <TextBlock Grid.Column="5" Grid.ColumnSpan="5" FontSize="9" Text="УПРАВЛЕНИЕ ДЕЛАМИ ПРЕЗИДЕНТА РОССИЙСКОЙ ФЕДЕРАЦИИ"/>
+                <TextBlock Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="5" FontSize="9" Text="Федеральное государственное бюджетное учреждение"/>
+                <TextBlock Grid.Row="2" Grid.Column="5" Grid.ColumnSpan="5" FontSize="9"  >"Консультативно-диагностический центр с поликлиникой"</TextBlock>
+                <TextBlock Grid.Row="3" Grid.Column="5" Grid.ColumnSpan="5" FontSize="9" Text="197110, г. Санкт-Петербург, Морской проспект дом 3."/>
+                <TextBlock Grid.Row="4" Grid.Column="5" Grid.ColumnSpan="5" FontSize="9" Text="тел.: (812) 331-55-03, (812) 305-24-93   факс:  (812) 305-24-94"/>
+
+                <TextBlock Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="10" FontWeight="Bold" >ПРОТОКОЛ АНЕСТЕЗИИ</TextBlock>
+                <TextBlock Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="10" Text="ПРЕДОПЕРАЦИОННЫЙ ОСМОТР"/>
+                <TextBlock Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" Text="Дата:"/>
+                <TextBlock Grid.Row="9" Grid.Column="3"  Text="{Binding Data}"/>
+                <TextBlock  Grid.Row="9" Grid.Column="4" Grid.ColumnSpan="2" FontWeight="Bold" Text="начало анестезии" />
+                <TextBlock Grid.Row="9" Grid.Column="6"  Grid.ColumnSpan="2" Text="{Binding StartTime}"/>
+                <TextBlock  Grid.Row="9" Grid.Column="8" Grid.ColumnSpan="2" FontWeight="Bold" Text="окончание анестезии" />
+                <TextBlock Grid.Row="9" Grid.Column="10"  Grid.ColumnSpan="2" Text="{Binding FinishTime}"/>
+                <TextBlock  Grid.Row="10" Grid.Column="1" Text="Ф.И.О." />
+                <TextBlock Grid.Row="10" Grid.Column="3" Grid.ColumnSpan="5" Text="{Binding Name}"/>
+                <TextBlock  Grid.Row="10" Grid.Column="7" Grid.ColumnSpan="2" Text="№ истории болезни" />
+                <TextBlock Grid.Row="10" Grid.Column="9" Grid.ColumnSpan="2"  Text="{Binding MedicalHistory}"/>
+                <TextBlock  Grid.Row="11" Grid.Column="1"  Grid.ColumnSpan="2" Text="вид анестезии" />
+                <TextBox  Grid.Row="11" Grid.Column="3"  Grid.ColumnSpan="7"  BorderBrush="White"  Text="тотальная внутривенная анестезия" />
+                <TextBlock  Grid.Row="12" Grid.Column="1"  Grid.ColumnSpan="2" HorizontalAlignment="Left" Text="Венозный доступ:" />
+                <ComboBox Grid.Row="12" Grid.Column="3"  Grid.ColumnSpan="3" BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="0">
+                    <TextBlock Text="периферический" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="центральный" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <TextBlock  Grid.Row="12" Grid.Column="6" HorizontalAlignment="Left"  Grid.ColumnSpan="2" Text="Премедикация:" />
+                <ComboBox Grid.Row="12" Grid.Column="9"  Grid.ColumnSpan="3" BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center">
+                    <TextBlock Text="Sol.Relanii 5mg/ml -" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol.Dormici 5mg/ml -" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol.Sibasoni 5mg/ml-" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol. Atropini sulf. 1 mg/ml -" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <TextBlock  Grid.Row="13" Grid.Column="1" Margin="1"  Grid.ColumnSpan="3" Text="Положение на операционном столе:" HorizontalAlignment="Left" />
+                <ComboBox Grid.Row="13" Grid.Column="4"  Grid.ColumnSpan="2" BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="0">
+                    <TextBlock Text="на спине" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="на животе" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="на правом боку" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="на левом боку" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="сидя" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Трендеоенбурга" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Фовлера" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="литотомическое" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="другое" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <TextBlock  Grid.Row="13" Grid.Column="6" HorizontalAlignment="Left"  Grid.ColumnSpan="3" Text="Антибиотикопрофилактика:" />
+                <ComboBox Grid.Row="13" Grid.Column="10"  Grid.ColumnSpan="2" BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center">
+                    <TextBlock Text="нет" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Lendacini" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Ceftriaxoni" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Amoxiclav" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Metrogyli" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Ciprofloxacini	" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <TextBlock  Grid.Row="14" Grid.Column="1"  Grid.ColumnSpan="3" HorizontalAlignment="Left"  Text="Прекураризация:" />
+                <ComboBox Grid.Row="14" Grid.Column="4"  Grid.ColumnSpan="2" BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="0">
+                    <TextBlock Text="нет" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="да" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+
+                </ComboBox>
+                <TextBlock  Grid.Row="14" Grid.Column="6" HorizontalAlignment="Left"  Grid.ColumnSpan="4" Text="преоксигенация:   100% кислород	" />
+                <ComboBox Grid.Row="14" Grid.Column="11"   BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center">
+                    <TextBlock Text="5 min" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="6 min" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="7 min" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="8 min" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="9 min" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+
+                <TextBlock  Grid.Row="16" Grid.Column="1"   Grid.RowSpan="9" FontWeight="Bold" Text="дыхание" />
+                <TextBlock  Grid.Row="16" Grid.Column="2" Grid.ColumnSpan="3"  FontWeight="Bold"  HorizontalAlignment="Left"  Text="дыхание" />
+                <TextBlock  Grid.Row="17" Grid.Column="2" Grid.ColumnSpan="3" FontWeight="Bold"  HorizontalAlignment="Left"  Text="Интубация " />
+                <TextBlock  Grid.Row="18" Grid.Column="3" Grid.ColumnSpan="2" FontWeight="Bold"  HorizontalAlignment="Left" Margin="0" Text="установлена трубка №"/>
+                <TextBlock  Grid.Row="19" Grid.Column="3" Grid.ColumnSpan="2" Margin="1" FontWeight="Bold"  HorizontalAlignment="Left"  Text="Установлена LMA №: " />
+                <TextBlock  Grid.Row="20" Grid.Column="2" Grid.ColumnSpan="2" FontWeight="Bold"  HorizontalAlignment="Left"  Text="аппарат ИВЛ " />
+                <TextBlock  Grid.Row="21" Grid.Column="2" Grid.ColumnSpan="3"  FontWeight="Bold"  HorizontalAlignment="Left"  Text="режимы вентивяции" />
+                <TextBlock  Grid.Row="22" Grid.Column="3" Grid.RowSpan="3" Margin="1" FontWeight="Bold" Text="параме тры вентиля ции" />
+                <TextBlock  Grid.Row="22" Grid.Column="4"   HorizontalAlignment="Left"  Text="TV" />
+                <TextBlock  Grid.Row="23" Grid.Column="4"   HorizontalAlignment="Left"  Text="F" />
+                <TextBlock  Grid.Row="24" Grid.Column="4"   HorizontalAlignment="Left"  Text="PEEP" />
+                <Border  Grid.Row="16" Grid.Column="5" BorderBrush="Black"  BorderThickness="1"/>
+                <ComboBox Grid.Row="16" Grid.Column="5"   BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="0">
+                    <TextBlock Text="ИВЛ" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="ВИВЛ" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="спонтан" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="17" Grid.Column="5"   BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center">
+                    <TextBlock Text="нет" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="оротрахеальная" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="назотрахеальная" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="18" Grid.Column="5"   BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center">
+                    <TextBlock Text="4.5" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="5" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="5.5" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="6" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="6.5" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="7" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="7.5" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="8" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="8.5" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="9" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="19" Grid.Column="5"   BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center">
+                    <TextBlock Text="2" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="3" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="4" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="5" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="20" Grid.Column="4" Grid.ColumnSpan="2" BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="1">
+                    <TextBlock Text="Drager Primus" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Blease" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+
+                </ComboBox>
+                <ComboBox Grid.Row="21" Grid.Column="5"   BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="1">
+                    <TextBlock Text="VCV" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="PCV" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="SIMV" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="PS-V" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="22" Grid.Column="5"   BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="3">
+                    <TextBlock Text="450" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="500" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="550" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="600" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="650" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="700" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="800" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="23" Grid.Column="5"   BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="6">
+                    <TextBlock Text="6" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="7" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="8" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="9" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="10" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="11" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="12" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="13" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="14" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="15" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="24" Grid.Column="5"   BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="0">
+                    <TextBlock Text="ИВЛ" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="ВИВЛ" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="спонтан" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <TextBlock  Grid.Row="16" Grid.Column="6"   Grid.RowSpan="6" FontWeight="Bold" Margin="1" Text="мониторинг" />
+                <TextBlock  Grid.Row="16" Grid.Column="7" HorizontalAlignment="Left"  Text="АД " />
+                <TextBlock  Grid.Row="17" Grid.Column="7" HorizontalAlignment="Left"  Text="ЧСС " />
+                <TextBlock  Grid.Row="18" Grid.Column="7" HorizontalAlignment="Left"  Text="ЭКГ " />
+                <TextBlock  Grid.Row="19" Grid.Column="7" HorizontalAlignment="Left"  Text="etCO2 " />
+                <TextBlock  Grid.Row="20" Grid.Column="7" HorizontalAlignment="Left"  Text="SpO2" />
+                <TextBlock  Grid.Row="21" Grid.Column="7" HorizontalAlignment="Left"  Text="Диурез " />
+                <ComboBox Grid.Row="16" Grid.Column="8"   BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="0">
+                    <TextBlock Text="да" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="нет" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="17" Grid.Column="8"   BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="0">
+                    <TextBlock Text="да" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="нет" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="18" Grid.Column="8"   BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="0">
+                    <TextBlock Text="да" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="нет" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="19" Grid.Column="8"   BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="0">
+                    <TextBlock Text="да" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="нет" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="20" Grid.Column="8"   BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="0">
+                    <TextBlock Text="да" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="нет" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="21" Grid.Column="8"   BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="1">
+                    <TextBlock Text="да" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="нет" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <Border  Grid.Row="16" Grid.Column="6"  Grid.RowSpan="6" BorderBrush="Black"  BorderThickness="1"/>
+                <Border  Grid.Row="16" Grid.Column="11"  Grid.RowSpan="4" BorderBrush="Black"  BorderThickness="1"/>
+                <TextBlock  Grid.Row="16" Grid.Column="9" Grid.ColumnSpan="3" HorizontalAlignment="Left" Text="оро/назо гастральный зонд " />
+                <TextBlock  Grid.Row="17" Grid.Column="9" Grid.ColumnSpan="3" HorizontalAlignment="Left" Text="мочевой катетер " />
+                <TextBlock  Grid.Row="18" Grid.Column="9" Grid.ColumnSpan="3" HorizontalAlignment="Left" Text="согревание растворов " />
+                <TextBlock  Grid.Row="19" Grid.Column="9" Grid.ColumnSpan="3" HorizontalAlignment="Left" Text="согревание пациента" />
+                <ComboBox Grid.Row="16" Grid.Column="11"   BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="1">
+                    <TextBlock Text="да" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="нет" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="17" Grid.Column="11"   BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="1">
+                    <TextBlock Text="да" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="нет" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="18" Grid.Column="11"   BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="1">
+                    <TextBlock Text="да" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="нет" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="19" Grid.Column="11"   BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="0">
+                    <TextBlock Text="да" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="нет" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+
+
+                <Border  Grid.Row="28" Grid.Column="3" BorderBrush="Black"  BorderThickness="1"/>
+                <Border  Grid.Row="29" Grid.Column="3"   BorderBrush="Black"  BorderThickness="1"/>
+                <Border  Grid.Row="30" Grid.Column="3"  BorderBrush="Black"  BorderThickness="1"/>
+                <Border   Grid.Row="31" Grid.Column="3"  BorderBrush="Black"  BorderThickness="1"/>
+
+                <TextBlock Grid.Row="27" Grid.Column="2" Grid.ColumnSpan="5" FontWeight="Bold" Text="Индукция	"/>
+                <TextBlock Grid.Row="27" Grid.Column="7" Grid.ColumnSpan="5" FontWeight="Bold" Text="Поддержание анестезии"/>
+                <TextBlock Grid.Row="28" Grid.Column="1" Grid.ColumnSpan="2" FontWeight="Bold" Text="Гипнотики"/>
+                <TextBlock Grid.Row="29" Grid.Column="1" Grid.ColumnSpan="2" FontWeight="Bold" Text="Анальгетики"/>
+                <TextBlock Grid.Row="30" Grid.Column="1" Grid.ColumnSpan="2" FontWeight="Bold" Text="Анальг/премед"/>
+                <TextBlock Grid.Row="31" Grid.Column="1" Grid.ColumnSpan="2" FontWeight="Bold" Text="Бензодиазепины"/>
+                <TextBlock Grid.Row="32" Grid.Column="1" Grid.ColumnSpan="2" FontWeight="Bold" Text="Миорелаксанты"/>
+                <TextBlock Grid.Row="33" Grid.Column="1" Grid.ColumnSpan="2" FontWeight="Bold" Text="Другие препараты"/>
+                <TextBlock Grid.Row="34" Grid.Column="1" Grid.ColumnSpan="2" FontWeight="Bold" Text="Мед. Газы"/>
+                <TextBlock Grid.Row="35" Grid.Column="1" Grid.ColumnSpan="3" FontWeight="Bold" Text="Местные анестетики"/>
+                <TextBlock Grid.Row="36" Grid.Column="1" Grid.ColumnSpan="3" FontWeight="Bold" Text="Инфузионная терапия"/>
+                <TextBlock Grid.Row="28" Grid.Column="3"  FontWeight="Bold" Text="{Binding StartTime}"/>
+                <TextBlock Grid.Row="29" Grid.Column="3"  FontWeight="Bold" Text="{Binding StartTime}"/>
+                <ComboBox Grid.Row="28" Grid.Column="4" Grid.ColumnSpan="3"  BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="0">
+                    <TextBlock Text="Sol.Propofoli 10mg/ml-" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol.Diprivani 10mg/ml-" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol. Thyopentali Na 0,5 g " FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol. Thyopentali Na 1 g  " FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="28" Grid.Column="7"  BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="29">
+                    <TextBlock Text="1ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="2ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="3ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="4ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="5ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="6ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="7ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="8ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="9ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="10ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="11ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="12ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="13ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="14ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="15ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="16ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="17ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="18ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="19ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="20ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="21ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="22ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="23ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="24ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="25ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="26ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="27ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="28ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="29ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="30ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="31ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="32ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="33ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="34ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="35ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="36ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="37ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="38ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="39ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="40ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="41ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="42ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="43ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="44ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="45ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="46ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="60ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="80ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="100ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="120ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="29" Grid.Column="4" Grid.ColumnSpan="3"  BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="0">
+                    <TextBlock Text="Sol.Phentanyli 50µg/ml -" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol.Promedoli 20mg/ml -" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol.Morphini 10mg/ml -" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol.Tramadoli 50mg/ml -" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="29" Grid.Column="7"  BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="1">
+                    <TextBlock Text="1ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="2ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="3ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="4ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="5ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="6ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="7ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="8ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="9ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="10ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="11ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="12ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="13ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="14ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="15ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="16ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="17ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="18ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="19ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="20ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="21ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="22ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="23ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="24ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="25ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="26ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="27ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="28ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="29ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="30ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="31ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="32ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="33ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="34ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="35ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="36ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="37ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="38ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="39ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="40ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="41ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="42ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="43ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="44ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="45ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="46ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="60ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="80ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="100ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="120ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <TextBox Grid.Row="30" Grid.Column="3"  FontWeight="Bold"  BorderBrush="White" />
+                <TextBox Grid.Row="31" Grid.Column="3"  FontWeight="Bold"  BorderBrush="White" />
+                <ComboBox Grid.Row="30" Grid.Column="4" Grid.ColumnSpan="3"  BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center">
+                    <TextBlock Text="Sol.Phentanyli 50µg/ml -" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol.Promedoli 20mg/ml -" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol.Morphini 10mg/ml -" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol.Tramadoli 50mg/ml -" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="30" Grid.Column="7"  BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" >
+                    <TextBlock Text="1ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="2ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="3ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="4ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="5ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="6ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="7ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="8ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="9ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="10ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="11ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="12ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="13ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="14ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="15ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="16ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="17ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="18ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="19ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="20ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="21ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="22ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="23ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="24ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="25ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="26ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="27ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="28ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="29ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="30ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="31ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="32ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="33ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="34ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="35ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="36ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="37ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="38ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="39ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="40ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="41ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="42ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="43ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="44ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="45ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="46ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="60ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="80ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="100ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="120ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="31" Grid.Column="4" Grid.ColumnSpan="3"  BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center">
+                    <TextBlock Text="Sol.Relii 5mg/ml -" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+
+                </ComboBox>
+                <ComboBox Grid.Row="31" Grid.Column="7"  BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" >
+                    <TextBlock Text="1ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="2ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="3ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="4ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="5ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="6ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="7ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="8ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="9ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="10ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="11ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="12ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="13ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="14ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="15ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="16ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="17ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="18ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="19ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="20ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="21ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="22ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="23ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="24ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="25ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="26ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="27ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="28ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="29ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="30ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="31ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="32ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="33ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="34ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="35ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="36ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="37ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="38ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="39ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="40ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="41ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="42ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="43ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="44ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="45ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="46ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="60ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="80ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="100ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="120ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="32" Grid.Column="3" Grid.ColumnSpan="4"  BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center">
+                    <TextBlock Text="Sol.Tracrii 10mg/ml-" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol. Esmeroni 10 mg/ml -" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol. Listenoni 20mg/ml -" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol. Arduani 2 mg/ml - " FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="32" Grid.Column="7"  BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" >
+                    <TextBlock Text="1ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="2ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="3ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="4ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="5ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="6ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="7ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="8ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="9ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="10ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="11ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="12ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="13ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="14ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="15ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="16ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="17ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="18ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="19ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="20ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="21ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="22ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="23ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="24ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="25ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="26ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="27ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="28ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="29ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="30ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="31ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="32ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="33ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="34ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="35ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="36ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="37ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="38ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="39ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="40ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="41ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="42ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="43ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="44ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="45ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="46ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="60ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="80ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="100ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="120ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="33" Grid.Column="3" Grid.ColumnSpan="4"  BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center">
+                    <TextBlock Text="Sol.Droperidoli 2,5mg/ml-" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol.Pentamyni 100mg/ml-" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol. Clophelini 0,1mg/ml -" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol.No-shpa -" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol. Atropini sulf. 1 mg/ml -" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="33" Grid.Column="7"  BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" >
+                    <TextBlock Text="1ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="2ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="3ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="4ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="5ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="6ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="7ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="8ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="9ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="10ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="11ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="12ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="13ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="14ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="15ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="16ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="17ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="18ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="19ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="20ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="21ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="22ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="23ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="24ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="25ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="26ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="27ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="28ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="29ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="30ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="31ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="32ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="33ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="34ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="35ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="36ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="37ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="38ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="39ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="40ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="41ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="42ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="43ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="44ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="45ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="46ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="60ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="80ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="100ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="120ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="34" Grid.Column="3" Grid.ColumnSpan="4"  BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center">
+                    <TextBlock Text="Sevorani" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Isoflurani" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Xenoni" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Nitrous oxydatum" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="34" Grid.Column="7"  BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" >
+                    <TextBlock Text="1ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="2ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="3ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="4ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="5ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="6ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="7ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="8ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="9ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="10ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="11ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="12ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="13ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="14ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="15ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="16ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="17ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="18ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="19ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="20ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="25ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="30ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="35ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="40ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="45ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="50ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="55ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="60ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="65ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="70ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="10L" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="20L" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="30L" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="40L" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="50L" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="60L" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="70L" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="120L" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="240L" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="360L" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="480L" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="35" Grid.Column="4" Grid.ColumnSpan="3"  BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center">
+                    <TextBlock Text="Sol.Marcaini 5mg/ml-" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol.Lidocaini 20mg/ml-" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol. Bupivacaini  5 mg/ml  - " FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol. Ropivacaini 2 mg/ml  - " FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol. Ropivacaini 7,5 mg/ml  - " FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+
+                </ComboBox>
+                <ComboBox Grid.Row="35" Grid.Column="7"  BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" >
+                    <TextBlock Text="1ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="2ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="3ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="4ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="5ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="6ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="7ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="8ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="9ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="10ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="11ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="12ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="13ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="14ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="15ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="16ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="17ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="18ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="19ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="20ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="21ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="22ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="23ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="24ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="25ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="26ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="27ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="28ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="29ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="30ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="31ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="32ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="33ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="34ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="35ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="36ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="37ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="38ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="39ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="40ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="41ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="42ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="43ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="44ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="45ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="46ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="60ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="80ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="100ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="120ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="36" Grid.Column="4" Grid.ColumnSpan="3"  BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="0">
+                    <TextBlock Text="Sol. NaCl 0,9%-" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol. Voluveni " FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol. Gelofusini - " FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol. Haes 6% - " FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol. Haes 10% - " FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol. Glucosae 5% -" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol. Glucosae 10%-" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+
+                </ComboBox>
+                <ComboBox Grid.Row="36" Grid.Column="7"  BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="0" >
+                    <TextBlock Text="250 ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="500 ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="750 ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="1000 ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="1250 ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="1500 ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="1750 ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="2000 ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="28" Grid.Column="9" Grid.ColumnSpan="2"  BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="0">
+                    <TextBlock Text="Sol.Propofoli 10mg/ml-" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol.Diprivani 10mg/ml-" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol. Thyopentali Na 0,5 g " FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="Sol. Thyopentali Na 1 g  " FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="28" Grid.Column="11"  BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="3">
+                    <TextBlock Text="1ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="2ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="3ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="4ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="5ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="6ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="7ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="8ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="9ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="10ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="11ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="12ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="13ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="14ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="15ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="16ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="17ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="18ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="19ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="20ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="21ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="22ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="23ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="24ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="25ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="26ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="27ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="28ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="29ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="30ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="31ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="32ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="33ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="34ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="35ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="36ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="37ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="38ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="39ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="40ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="41ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="42ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="43ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="44ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="45ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="46ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="60ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="80ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="100ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="120ml" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <ComboBox Grid.Row="28" Grid.Column="8"  BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="3">
+                    <TextBlock Text="в/в" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="в/м" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="п/к" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+
+                <TextBlock Grid.Row="37" FontWeight="Bold" Grid.ColumnSpan="13" Text="Описание индукции и поэтапного течения анестезии"/>
+                <TextBox Grid.Row="38" Grid.Column="1" Grid.ColumnSpan="11" Grid.RowSpan="6" BorderBrush="White" Text="В операционной АД 114/61 мм рт ст, ЧСС 70 в мин. Индукция наркоза б/о.   Течение анестезии удовлетворительное.  Пациент гемодинамически стабилен. АД 120/80- 100/70 мм рт ст. ЧСС 65 в мин. SpO2 100 - 98 "/>
+                <TextBlock Grid.Row="44" Grid.Column="1" Grid.ColumnSpan="2" FontWeight="Bold" Text="Пробуждение:"/>
+                <ComboBox Grid.Row="44" Grid.Column="3" Grid.ColumnSpan="3"  BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="0">
+                    <TextBlock Text="на операционном столе" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="в палате" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="в палате интенсивной терапии" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                </ComboBox>
+                <TextBlock Grid.Row="45" Grid.Column="1" Grid.ColumnSpan="2" FontWeight="Bold" Text="Декураризация:"/>
+                <ComboBox Grid.Row="45" Grid.Column="3" Grid.ColumnSpan="3"  BorderBrush="White" IsEditable="True" IsReadOnly="True" HorizontalContentAlignment="Center" SelectedIndex="1">
+                    <TextBlock Text="не проводилась	" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+                    <TextBlock Text="проводилась cм.анестез.карту" FontFamily="Verdana" FontSize="10" HorizontalAlignment="Center"  />
+
+                </ComboBox>
+                <TextBlock Grid.Row="46" Grid.Column="1" Grid.ColumnSpan="2" FontWeight="Bold" Text="Пациент"/>
+                <TextBox  Grid.Row="46" Grid.Column="3" Grid.ColumnSpan="9" Grid.RowSpan="7" BorderBrush="White" Text="доставлен в палату под наблюдение мед персонала"/>
+                <TextBlock Grid.Row="53" Grid.Column="1" Grid.ColumnSpan="2" Text="Анестезист:"/>
+                <TextBlock Grid.Row="53" Grid.Column="4" Grid.ColumnSpan="2" Text="{Binding NameNurse}"/>
+                <TextBlock Grid.Row="53" Grid.Column="6" Grid.ColumnSpan="2" Text="Анестезиолог:"/>
+                <TextBlock Grid.Row="53" Grid.Column="9" Grid.ColumnSpan="2" Text="{Binding NameNurse}"/>
+            </Grid>
+
+        </ListBox>
+
+        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+
+            </Grid.ColumnDefinitions>
+
+
+            <Button Grid.Row="1" Grid.Column="7" Width="80"  Click="Edit_Click"  Grid.RowSpan="3">
+                <Grid Width="80">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="60"/>
+
+                    </Grid.ColumnDefinitions>
+                    <Image Source="Resources/printer.png" />
+                    <TextBlock Grid.Column="1" Text="Печать" FontSize="12" Margin="10 1 10 1" VerticalAlignment="Center"/>
+                </Grid>
+            </Button>
+            <Grid Grid.Row="1" Grid.Column="6" Grid.RowSpan="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <ComboBox x:Name="PageNum" Grid.Column="1"  Grid.ColumnSpan="2" HorizontalContentAlignment="Center" >
+                    <ComboBoxItem Content=" " FontFamily="Verdana" FontSize="10" HorizontalContentAlignment="Center"  IsSelected="True" />
+                    <ComboBoxItem Content="1" FontFamily="Verdana" FontSize="10" HorizontalContentAlignment="Center"  />
+                    <ComboBoxItem Content="2" FontFamily="Verdana" FontSize="10" HorizontalContentAlignment="Center"  />
+                </ComboBox>
+                <Image  Grid.Row="3" Source="Resources/page.png"/>
+
+
+
+            </Grid>
+
+
+        </Grid>
+
+
+
+    </Grid>
+</Window>

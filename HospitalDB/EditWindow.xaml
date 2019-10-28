@@ -250,7 +250,7 @@
         <TextBox Text="{Binding SpialNeedle}" Grid.Row="23"  Grid.Column="7"/>
         <TextBlock Text="Интубационная трубка"  Grid.Row="22"  Grid.Column="9" Grid.ColumnSpan="2"/>
         <TextBox Text="{Binding EndotrachealTube}" Grid.Row="23" Grid.Column="9" Grid.ColumnSpan="2"/>
-        <TextBlock Text="Баллы"  Grid.Row="25"  />
+        <TextBlock Text="Баллы" Margin="4" Grid.Row="25"  />
         <TextBox Text="{Binding Points}" Grid.Row="25" Grid.Column="1" />
 
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="24" Grid.RowSpan="2" Grid.Column="10" Grid.ColumnSpan="2">

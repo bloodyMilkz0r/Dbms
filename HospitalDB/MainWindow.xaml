@@ -83,8 +83,46 @@
                     <TextBlock Grid.Column="2" Text="Удалить"/>
                 </Grid>
             </Button>
-            <Image Height="20" Width="20"  Margin="0 5 0 0" Source="Resources/document.png" />
-            <TextBox Margin="-10 3 0 0" Foreground="LightGray" Width="150"/>
+
+            <Button Height="17" Width="150" Margin="0 3 0 0" Command="{Binding PrintDoc}"
+                    CommandParameter="{Binding ElementName=patientsList, Path=SelectedItem}" >
+                <Grid Width="145">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="15"/>
+                        <ColumnDefinition Width="3"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="Resources/file.png" />
+                    <TextBlock Grid.Column="2" Text="Документы для печати"/>
+                </Grid>
+            </Button>
+
+            <Button Height="17" Width="120" Margin="0 3 0 0" Command="{Binding PrinMedicalHistory}"
+                    CommandParameter="{Binding ElementName=patientsList, Path=SelectedItem}" >
+                <Grid Width="120">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="15"/>
+                        <ColumnDefinition Width="3"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="Resources/file.png" />
+                    <TextBlock Grid.Column="2" Text="Документы в ИБ"/>
+                </Grid>
+            </Button>
+
+            <Button Height="17" Width="190" Margin="0 3 0 0" Command="{Binding PrintProtocol}"
+                    CommandParameter="{Binding ElementName=patientsList, Path=SelectedItem}" >
+                <Grid Width="190">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="15"/>
+                        <ColumnDefinition Width="3"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="Resources/file.png" />
+                    <TextBlock Grid.Column="2" Text="Осмотр и протокол анастезии"/>
+                </Grid>
+            </Button>
+
 
         </Menu>
         <TextBlock Margin="0 7 0 7" Text="Дата" Grid.Row="1" TextAlignment="Center"/>
@@ -109,7 +147,7 @@
                     <StackPanel>
                         <Expander>
                             <Expander.Header>
-                                <Grid Width="Auto" MinWidth="1600">
+                                <Grid MaxWidth="2000" MinWidth="1600">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="0.8*"/>
                                         <ColumnDefinition Width="1*" />
